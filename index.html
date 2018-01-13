@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <title>People Counter</title>
+  </head>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #ddd;
+    }
+    #container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 2em;
+    }
+    h1 {
+      font-size: 5em;
+      padding: 25px;
+    }
+  </style>
+
+  <script>
+    // Connect to the socket server.
+    // Since the IP is not provided, it defaults to the current page's host.
+    let socket = io()
+
+    // Listen for update event. Runs every time people count changes.
+    socket.on('UPDATE_COUNT', (peopleCount) => {
+      // Use JQuery to replace the text on the element
+      $('#peopleCount').text(peopleCount)
+    })
+  </script>
+
+  <body>
+    <div id='container'>
+      <h1 id='peopleCount'>0</h1>
+      <h2>PEOPLE</h2>
+    </div>
+  </body>
+
+</html>

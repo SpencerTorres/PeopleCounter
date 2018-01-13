@@ -1,0 +1,16 @@
+{
+  "name": "PeopleCounter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple People Counter example project.",
+  "main": "app.js",
+  "repository": "https://github.com/SpencerTorres/PeopleCounter.git",
+  "author": "Spencer Torres",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "ioredis": "^3.2.2",
+    "socket.io": "^2.0.4"
+  }
+}
